@@ -1262,7 +1262,7 @@ section.alt {
             <div class="hero-content">
                 <span class="role-badge">Design + Build (Solo)</span>
                 <h1>COMPANY<span>MODEL<span class="cursor"></span></span></h1>
-                <p>Designing a content intelligence system for Square Web at Block, Inc.</p>
+                <p>I built a system that extracts, catalogs, and generates marketing content for a large fintech company's website.</p>
             </div>
         </div>
     </section>
@@ -1301,7 +1301,7 @@ section.alt {
         <div class="container">
             <h2 class="section-heading">The Problem</h2>
             <div class="text-content">
-                <p>Pages tell coherent stories. The site doesn't. Hundreds of marketing pages on Square Web, written by different teams over years, in many locales. The same product gets named two different ways in three different places. There's no machine-readable model of what Block, Inc. (Square) says - so there's no way to author at the system level.</p>
+                <p>The company's marketing site had hundreds of pages across multiple regions and locales, but no structured way to track what content existed where. Different teams had written pages over years. The same product would be described differently on different pages. There was no single source of truth for messaging, so every new page started from scratch.</p>
             </div>
         </div>
     </section>
@@ -1311,7 +1311,7 @@ section.alt {
         <div class="container">
             <h2 class="section-heading">The Approach</h2>
             <div class="text-content">
-                <p>Stop authoring pages. Author the system that produces them. Extract everything the Square Web site already says. Reduce it to canonical entities. Make it queryable. Then let an LLM compose new pages out of those entities.</p>
+                <p>Instead of writing pages one at a time, I built a system that extracts what the site already says, organizes it into reusable content entities (features, benefits, CTAs, pricing, testimonials), and lets an LLM compose new pages from those entities. The goal: make content authoring data-driven instead of ad hoc.</p>
             </div>
 
             <h3 class="subheading" style="margin-top: 32px;">The 4-Layer Architecture</h3>
@@ -1319,22 +1319,22 @@ section.alt {
                 <div class="layer-card fade-in">
                     <span class="layer-number">1</span>
                     <h3>Extraction</h3>
-                    <p>Crawl, scrape, and LLM-extract structured entities from existing pages. Turn unstructured marketing copy into machine-readable data.</p>
+                    <p>Crawl the site and use an LLM to extract structured entities from each page. This turns unstructured marketing copy into machine-readable data.</p>
                 </div>
                 <div class="layer-card fade-in">
                     <span class="layer-number">2</span>
                     <h3>Canonical Model</h3>
-                    <p>A deduplicated entity database that spans pages and locales. One source of truth for what Square says about each product, feature, and benefit.</p>
+                    <p>A deduplicated entity database that spans pages and locales. One source of truth for what the company says about each product, feature, and benefit.</p>
                 </div>
                 <div class="layer-card fade-in">
                     <span class="layer-number">3</span>
                     <h3>Generative Content</h3>
-                    <p>LLM assembles page scaffolds from real entities. New pages are composed from the model, not invented from scratch.</p>
+                    <p>An LLM assembles page layouts from real entities in the database. New pages are composed from verified content, not invented from scratch.</p>
                 </div>
                 <div class="layer-card fade-in">
                     <span class="layer-number">4</span>
                     <h3>Adaptive Layer</h3>
-                    <p>Runtime personalization based on audience and context. Planned but not yet built - the architecture makes room for it.</p>
+                    <p>Personalization based on audience and context at runtime. This layer is planned but not yet built. The architecture is designed to support it.</p>
                 </div>
             </div>
 
@@ -1369,7 +1369,7 @@ section.alt {
             </div>
 
             <div class="text-content" style="margin-top: 30px;">
-                <p>I designed and built layers 1-3. The boundaries between layers are the design move - drawing them clearly is what keeps the system composable.</p>
+                <p>I designed and built layers 1 through 3. The key design decision was defining clear boundaries between layers so each one can be changed independently.</p>
             </div>
         </div>
     </section>
@@ -1383,32 +1383,32 @@ section.alt {
                 <div class="process-item fade-in">
                     <div class="process-marker">1</div>
                     <div class="process-content">
-                        <div class="process-title">Talk to the data first</div>
-                        <p>Before sketching anything, sat with Claude and wrote SQL. Wanted to know what the distributions actually looked like. Several early ideas died here, which is the cheapest place for them to die.</p>
+                        <div class="process-title">Explore the data before designing</div>
+                        <p>Before sketching any UI, I used Claude to write SQL queries against the extracted data. I wanted to see actual distributions and patterns. Several early design ideas turned out to be wrong and got cut here, before any design time was spent.</p>
                     </div>
                 </div>
 
                 <div class="process-item fade-in">
                     <div class="process-marker">2</div>
                     <div class="process-content">
-                        <div class="process-title">Build the dirt road first</div>
-                        <p>Before any UI, shipped the pipeline as a CLI. Ugly, fast, real. Once the data shape was right, the UI was almost a transcription.</p>
+                        <div class="process-title">Build the pipeline before the UI</div>
+                        <p>I shipped the extraction pipeline as a command-line tool first. No polish, just working data. Once I knew what the data actually looked like, the dashboard design followed naturally.</p>
                     </div>
                 </div>
 
                 <div class="process-item fade-in">
                     <div class="process-marker">3</div>
                     <div class="process-content">
-                        <div class="process-title">Plan, paste, implement</div>
-                        <p>Every chunk of work began as a written plan pasted into a Claude session - context, current state, change list, success criteria.</p>
+                        <div class="process-title">Write the plan, then hand it to AI</div>
+                        <p>Every chunk of work started as a written plan that I pasted into a Claude session. Each plan included: current context, what needs to change, and what success looks like.</p>
                     </div>
                 </div>
 
                 <div class="process-item fade-in">
                     <div class="process-marker">4</div>
                     <div class="process-content">
-                        <div class="process-title">Hold the line</div>
-                        <p>Knowing what NOT to redesign is a design move. When the team said "keep the graph as-is," that constraint made the work better, not worse.</p>
+                        <div class="process-title">Respect the constraints</div>
+                        <p>The team asked me to keep the knowledge graph visualization as-is. That constraint helped focus the work on the areas that actually needed new design.</p>
                     </div>
                 </div>
             </div>
@@ -1420,7 +1420,7 @@ section.alt {
         <div class="container">
             <h2 class="section-heading">Built-In Feedback</h2>
             <div class="text-content">
-                <p>I built a red-pen annotation layer directly into the dashboard prototype. Stakeholders could toggle notes on and off. Notes on, and every open design question appeared circled in red, right next to the data it was about. Notes off, clean dashboard. Questions like "Should pricing be its own entity type or a property of a product node?" lived where the answer mattered, not in a separate doc nobody checks. The toggle made the prototype double as its own design review surface.</p>
+                <p>I added a toggle-able annotation layer to the dashboard prototype. When toggled on, open design questions appeared highlighted in red, positioned next to the data they referred to. When toggled off, the dashboard looked clean. For example, a question like "Should pricing be its own entity type or a property of a product?" appeared right on the pricing section. This let the prototype serve as both a working tool and a design review surface, instead of keeping feedback in a separate document.</p>
             </div>
         </div>
     </section>
@@ -1432,7 +1432,7 @@ section.alt {
 
             <h3 class="subheading" style="margin-top: 20px;">Layer 2 - The Dashboard</h3>
             <div class="text-content">
-                <p>The dashboard needed to answer one question fast: where are we missing content? A heatmap of products vs. entity types across locales reveals gaps at a glance. The nav gives access to deeper views - funnel analysis, locale comparison, entity graph - but the heatmap is the front door.</p>
+                <p>The dashboard's primary job is to answer: where are we missing content? The main view is a heatmap showing products vs. entity types (features, benefits, CTAs, etc.) across locales. Empty cells mean gaps. The navigation links to deeper views like funnel analysis and the entity graph, but the heatmap is the landing page.</p>
             </div>
 
             <!-- Wireframe Dashboard -->
@@ -1486,7 +1486,7 @@ section.alt {
                     <div class="wf-product-dna">
                         <div class="wf-product-dna-title">Product DNA</div>
                         <div class="wf-dna-row">
-                            <span class="wf-dna-label">payments</span>
+                            <span class="wf-dna-label">product-a</span>
                             <div class="wf-dna-bar-track">
                                 <div class="wf-dna-seg" style="width:40%;background:var(--accent);opacity:0.9"></div>
                                 <div class="wf-dna-seg" style="width:20%;background:var(--accent);opacity:0.6"></div>
@@ -1495,7 +1495,7 @@ section.alt {
                             </div>
                         </div>
                         <div class="wf-dna-row">
-                            <span class="wf-dna-label">terminal</span>
+                            <span class="wf-dna-label">product-b</span>
                             <div class="wf-dna-bar-track">
                                 <div class="wf-dna-seg" style="width:35%;background:var(--accent);opacity:0.9"></div>
                                 <div class="wf-dna-seg" style="width:25%;background:var(--accent);opacity:0.6"></div>
@@ -1503,7 +1503,7 @@ section.alt {
                             </div>
                         </div>
                         <div class="wf-dna-row">
-                            <span class="wf-dna-label">restaurants</span>
+                            <span class="wf-dna-label">product-c</span>
                             <div class="wf-dna-bar-track">
                                 <div class="wf-dna-seg" style="width:30%;background:var(--accent);opacity:0.9"></div>
                                 <div class="wf-dna-seg" style="width:18%;background:var(--accent);opacity:0.6"></div>
@@ -1512,7 +1512,7 @@ section.alt {
                             </div>
                         </div>
                         <div class="wf-dna-row">
-                            <span class="wf-dna-label">retail</span>
+                            <span class="wf-dna-label">product-d</span>
                             <div class="wf-dna-bar-track">
                                 <div class="wf-dna-seg" style="width:28%;background:var(--accent);opacity:0.9"></div>
                                 <div class="wf-dna-seg" style="width:15%;background:var(--accent);opacity:0.6"></div>
@@ -1520,7 +1520,7 @@ section.alt {
                             </div>
                         </div>
                         <div class="wf-dna-row">
-                            <span class="wf-dna-label">invoices</span>
+                            <span class="wf-dna-label">product-e</span>
                             <div class="wf-dna-bar-track">
                                 <div class="wf-dna-seg" style="width:22%;background:var(--accent);opacity:0.9"></div>
                                 <div class="wf-dna-seg" style="width:12%;background:var(--accent);opacity:0.6"></div>
@@ -1564,17 +1564,17 @@ section.alt {
                             <div class="wf-heatmap-col-label">price</div>
                             <div class="wf-heatmap-col-label">test</div>
                             <div class="wf-heatmap-col-label">stat</div>
-                            <!-- Row: Retail -->
-                            <div class="wf-heatmap-row-label">retail</div>
+                            <!-- Row: Segment A -->
+                            <div class="wf-heatmap-row-label">segment-a</div>
                             <div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-low"></div><div class="wf-hm-cell h-none"></div><div class="wf-hm-cell h-low"></div>
-                            <!-- Row: Restaurant -->
-                            <div class="wf-heatmap-row-label">restaurant</div>
+                            <!-- Row: Segment B -->
+                            <div class="wf-heatmap-row-label">segment-b</div>
                             <div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-low"></div><div class="wf-hm-cell h-none"></div>
-                            <!-- Row: Services -->
-                            <div class="wf-heatmap-row-label">services</div>
+                            <!-- Row: Segment C -->
+                            <div class="wf-heatmap-row-label">segment-c</div>
                             <div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-low"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-none"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-low"></div>
-                            <!-- Row: Enterprise -->
-                            <div class="wf-heatmap-row-label">enterprise</div>
+                            <!-- Row: Segment D -->
+                            <div class="wf-heatmap-row-label">segment-d</div>
                             <div class="wf-hm-cell h-low"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-none"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-none"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div>
                         </div>
                     </div>
@@ -1583,18 +1583,18 @@ section.alt {
 
             <div class="findings-grid">
                 <div class="finding-card fade-in">
-                    <h3>Lead with the question, not the graph</h3>
-                    <p>A force-directed view is gorgeous, but users needed to answer "where do we have a gap?" - so structured views got the front page.</p>
+                    <h3>Structured views first, graph second</h3>
+                    <p>A force-directed graph looks impressive, but users needed to answer "where do we have a gap?" Structured views like heatmaps answer that faster, so they got the front page.</p>
                 </div>
 
                 <div class="finding-card fade-in">
-                    <h3>Make absence visible</h3>
-                    <p>Most heatmaps render zeros faint. Here, empty cells are outlined hard, so the gaps read as clearly as the hits.</p>
+                    <h3>Make gaps obvious</h3>
+                    <p>Most heatmaps make empty cells invisible. In this design, empty cells have a visible dashed outline so content gaps are just as readable as content that exists.</p>
                 </div>
 
                 <div class="finding-card fade-in">
-                    <h3>Wait until the data was real</h3>
-                    <p>A generation demo built on a thin graph would have set wrong expectations. Held Layer 3 back until Layer 2 had enough volume.</p>
+                    <h3>Wait for real data before demoing generation</h3>
+                    <p>I held off building the content generation layer (Layer 3) until the entity database (Layer 2) had enough volume. Demoing generation on thin data would have set wrong expectations about quality.</p>
                 </div>
             </div>
         </div>
@@ -1606,17 +1606,17 @@ section.alt {
             <h2 class="section-heading">Reflection</h2>
 
             <div class="quote-box fade-in">
-                <p class="quote-text">The shape of the data is the shape of the design.</p>
+                <p class="quote-text">Understand the data first. The design follows from its shape.</p>
             </div>
 
             <div class="text-content" style="margin-top: 30px;">
-                <p>The thing I'm proudest of is the seam between the layers. You can swap out the LLM in Layer 1 and Layers 2-4 don't notice. The boundaries hold because they were drawn early, on purpose.</p>
+                <p>The part I'm most proud of is the separation between layers. You can swap out the LLM in Layer 1 and Layers 2 through 4 keep working unchanged. That modularity works because I defined the boundaries early and stuck with them.</p>
             </div>
 
             <!-- Related Project Callout -->
             <div class="callout-box fade-in">
                 <h3>Related Open-Source Project</h3>
-                <p>I built a similar content entity extraction and knowledge graph system as a personal project: <a href="https://github.com/naeema-scopes/sitemapper" target="_blank" rel="noopener noreferrer">SiteMapper</a> - open source, with full code.</p>
+                <p>I built a similar content extraction and knowledge graph system as a personal project. It uses the same approach of crawling sites, extracting entities, and building a queryable model. Full source code available: <a href="https://github.com/naeema-scopes/sitemapper" target="_blank" rel="noopener noreferrer">SiteMapper on GitHub</a>.</p>
             </div>
 
         </div>
