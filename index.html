@@ -804,35 +804,48 @@ section.alt {
     color: var(--accent);
 }
 
-.wf-graph-pills {
+.wf-graph-toolbar {
     display: flex;
-    gap: 6px;
+    align-items: center;
+    gap: 10px;
     padding: 10px 16px;
     border-bottom: 1px solid #222;
     background: #0d0d0d;
 }
 
-.wf-graph-pill {
+.wf-graph-dropdown {
     font-size: 0.55rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--text-dim);
     border: 1px solid #333;
-    padding: 3px 10px;
+    padding: 5px 10px;
     border-radius: 2px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     cursor: default;
+    min-width: 110px;
 }
 
-.wf-graph-pill.active {
-    color: var(--accent);
-    border-color: var(--accent);
-    background: rgba(59, 130, 246, 0.06);
+.wf-graph-dropdown-arrow {
+    font-size: 0.4rem;
+    color: #555;
+    margin-left: auto;
+}
+
+.wf-graph-counts {
+    font-size: 0.5rem;
+    color: #555;
+    letter-spacing: 0.5px;
+    margin-left: auto;
 }
 
 .wf-graph-canvas {
     position: relative;
     height: 340px;
-    background: #080808;
+    background: #070a12;
     overflow: hidden;
 }
 
@@ -840,24 +853,40 @@ section.alt {
     position: absolute;
     bottom: 14px;
     right: 14px;
-    background: #111;
+    background: rgba(17, 17, 17, 0.92);
     border: 1px solid #333;
-    padding: 8px 12px;
+    padding: 10px 14px;
     border-radius: 2px;
     z-index: 2;
+    min-width: 150px;
 }
 
 .wf-graph-infocard-name {
     font-size: 0.65rem;
     color: var(--text);
+    margin-bottom: 4px;
 }
 
 .wf-graph-infocard-type {
-    font-size: 0.5rem;
-    color: var(--accent);
+    font-size: 0.45rem;
+    color: #0a0a0a;
+    background: var(--accent);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-top: 2px;
+    padding: 2px 6px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.wf-graph-infocard-edges {
+    font-size: 0.48rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.wf-graph-infocard-edges span {
+    color: #888;
 }
 
 @media (max-width: 768px) {
@@ -1922,45 +1951,80 @@ section.alt {
             <!-- Wireframe: Knowledge Graph View -->
             <div class="wf-graph fade-in">
                 <div class="wf-graph-label">Knowledge Graph View</div>
-                <div class="wf-graph-pills">
-                    <span class="wf-graph-pill active">feat</span>
-                    <span class="wf-graph-pill">prod</span>
-                    <span class="wf-graph-pill">ben</span>
-                    <span class="wf-graph-pill">cta</span>
-                    <span class="wf-graph-pill">price</span>
+                <div class="wf-graph-toolbar">
+                    <div class="wf-graph-dropdown">Type filter <span class="wf-graph-dropdown-arrow">&#9662;</span></div>
+                    <div class="wf-graph-dropdown">Edge filter <span class="wf-graph-dropdown-arrow">&#9662;</span></div>
+                    <div class="wf-graph-counts">847 nodes, 312 contains, 94 co-occurs, 41 cross-page</div>
                 </div>
                 <div class="wf-graph-canvas">
                     <svg width="100%" height="100%" viewBox="0 0 800 340" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
-                        <!-- Connection lines -->
-                        <line x1="400" y1="160" x2="250" y2="80" stroke="#333" stroke-width="1"/>
-                        <line x1="400" y1="160" x2="550" y2="90" stroke="#333" stroke-width="1"/>
-                        <line x1="400" y1="160" x2="300" y2="260" stroke="#333" stroke-width="1"/>
-                        <line x1="400" y1="160" x2="520" y2="240" stroke="#333" stroke-width="1"/>
-                        <line x1="250" y1="80" x2="150" y2="130" stroke="#222" stroke-width="1"/>
-                        <line x1="250" y1="80" x2="180" y2="40" stroke="#222" stroke-width="1"/>
-                        <line x1="550" y1="90" x2="650" y2="60" stroke="#222" stroke-width="1"/>
-                        <line x1="550" y1="90" x2="680" y2="150" stroke="#222" stroke-width="1"/>
-                        <line x1="300" y1="260" x2="180" y2="280" stroke="#222" stroke-width="1"/>
-                        <line x1="520" y1="240" x2="620" y2="280" stroke="#222" stroke-width="1"/>
-                        <line x1="300" y1="260" x2="520" y2="240" stroke="#1a1a1a" stroke-width="1"/>
-                        <line x1="150" y1="130" x2="180" y2="280" stroke="#1a1a1a" stroke-width="1"/>
-                        <!-- Nodes: varying sizes for visual hierarchy -->
-                        <circle cx="400" cy="160" r="28" fill="#111" stroke="var(--accent)" stroke-width="2" opacity="0.9"/>
-                        <circle cx="250" cy="80" r="20" fill="#111" stroke="var(--accent)" stroke-width="1.5" opacity="0.7"/>
-                        <circle cx="550" cy="90" r="22" fill="#111" stroke="var(--accent)" stroke-width="1.5" opacity="0.7"/>
-                        <circle cx="300" cy="260" r="18" fill="#111" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
-                        <circle cx="520" cy="240" r="16" fill="#111" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
-                        <circle cx="150" cy="130" r="12" fill="#111" stroke="#444" stroke-width="1" opacity="0.5"/>
-                        <circle cx="180" cy="40" r="10" fill="#111" stroke="#444" stroke-width="1" opacity="0.4"/>
-                        <circle cx="650" cy="60" r="14" fill="#111" stroke="#444" stroke-width="1" opacity="0.5"/>
-                        <circle cx="680" cy="150" r="11" fill="#111" stroke="#444" stroke-width="1" opacity="0.4"/>
-                        <circle cx="180" cy="280" r="13" fill="#111" stroke="#444" stroke-width="1" opacity="0.5"/>
-                        <circle cx="620" cy="280" r="10" fill="#111" stroke="#444" stroke-width="1" opacity="0.4"/>
-                        <circle cx="100" cy="210" r="9" fill="#111" stroke="#333" stroke-width="1" opacity="0.3"/>
+                        <!-- Cluster 1: top-left (payments cluster) -->
+                        <circle cx="180" cy="95" r="6" fill="#3B82F6" opacity="0.8"/>
+                        <circle cx="195" cy="88" r="4" fill="#3B82F6" opacity="0.6"/>
+                        <circle cx="170" cy="105" r="3" fill="#3B82F6" opacity="0.5"/>
+                        <circle cx="200" cy="100" r="5" fill="#3B82F6" opacity="0.7"/>
+                        <circle cx="185" cy="80" r="3" fill="#3B82F6" opacity="0.4"/>
+                        <circle cx="165" cy="90" r="4" fill="#3B82F6" opacity="0.55"/>
+                        <circle cx="205" cy="92" r="2" fill="#3B82F6" opacity="0.4"/>
+                        <circle cx="175" cy="112" r="3" fill="#3B82F6" opacity="0.45"/>
+                        <circle cx="192" cy="110" r="2" fill="#3B82F6" opacity="0.35"/>
+                        <!-- Cluster 2: center (large, main cluster) -->
+                        <circle cx="400" cy="160" r="8" fill="#60A5FA" opacity="0.9"/>
+                        <circle cx="385" cy="148" r="5" fill="#3B82F6" opacity="0.7"/>
+                        <circle cx="415" cy="152" r="6" fill="#3B82F6" opacity="0.75"/>
+                        <circle cx="395" cy="172" r="4" fill="#3B82F6" opacity="0.6"/>
+                        <circle cx="410" cy="168" r="5" fill="#3B82F6" opacity="0.65"/>
+                        <circle cx="378" cy="162" r="3" fill="#3B82F6" opacity="0.5"/>
+                        <circle cx="420" cy="145" r="4" fill="#3B82F6" opacity="0.55"/>
+                        <circle cx="390" cy="140" r="3" fill="#3B82F6" opacity="0.45"/>
+                        <circle cx="425" cy="165" r="3" fill="#3B82F6" opacity="0.5"/>
+                        <circle cx="405" cy="178" r="4" fill="#3B82F6" opacity="0.5"/>
+                        <circle cx="370" cy="155" r="2" fill="#3B82F6" opacity="0.35"/>
+                        <circle cx="430" cy="158" r="2" fill="#3B82F6" opacity="0.4"/>
+                        <circle cx="388" cy="180" r="3" fill="#3B82F6" opacity="0.4"/>
+                        <circle cx="418" cy="175" r="2" fill="#3B82F6" opacity="0.35"/>
+                        <!-- Cluster 3: top-right (terminal/hardware cluster) -->
+                        <circle cx="600" cy="75" r="5" fill="#3B82F6" opacity="0.7"/>
+                        <circle cx="615" cy="68" r="4" fill="#3B82F6" opacity="0.6"/>
+                        <circle cx="590" cy="82" r="3" fill="#3B82F6" opacity="0.5"/>
+                        <circle cx="608" cy="80" r="3" fill="#3B82F6" opacity="0.55"/>
+                        <circle cx="622" cy="76" r="2" fill="#3B82F6" opacity="0.4"/>
+                        <circle cx="595" cy="70" r="3" fill="#3B82F6" opacity="0.45"/>
+                        <circle cx="610" cy="60" r="2" fill="#3B82F6" opacity="0.35"/>
+                        <!-- Cluster 4: bottom-left (banking cluster) -->
+                        <circle cx="240" cy="260" r="5" fill="#3B82F6" opacity="0.65"/>
+                        <circle cx="255" cy="252" r="4" fill="#3B82F6" opacity="0.55"/>
+                        <circle cx="230" cy="268" r="3" fill="#3B82F6" opacity="0.45"/>
+                        <circle cx="248" cy="272" r="3" fill="#3B82F6" opacity="0.5"/>
+                        <circle cx="260" cy="265" r="2" fill="#3B82F6" opacity="0.4"/>
+                        <circle cx="235" cy="250" r="2" fill="#3B82F6" opacity="0.35"/>
+                        <!-- Cluster 5: right-center (restaurants cluster) -->
+                        <circle cx="580" cy="210" r="5" fill="#3B82F6" opacity="0.65"/>
+                        <circle cx="595" cy="205" r="4" fill="#3B82F6" opacity="0.55"/>
+                        <circle cx="570" cy="218" r="3" fill="#3B82F6" opacity="0.45"/>
+                        <circle cx="588" cy="220" r="3" fill="#3B82F6" opacity="0.5"/>
+                        <circle cx="600" cy="215" r="2" fill="#3B82F6" opacity="0.4"/>
+                        <circle cx="575" cy="200" r="2" fill="#3B82F6" opacity="0.35"/>
+                        <!-- Scattered outlier nodes -->
+                        <circle cx="100" cy="200" r="2" fill="#3B82F6" opacity="0.25"/>
+                        <circle cx="700" cy="140" r="2" fill="#3B82F6" opacity="0.25"/>
+                        <circle cx="320" cy="50" r="2" fill="#3B82F6" opacity="0.2"/>
+                        <circle cx="480" cy="290" r="2" fill="#3B82F6" opacity="0.2"/>
+                        <circle cx="140" cy="170" r="2" fill="#3B82F6" opacity="0.2"/>
+                        <circle cx="680" cy="250" r="2" fill="#3B82F6" opacity="0.2"/>
+                        <circle cx="340" cy="300" r="2" fill="#3B82F6" opacity="0.15"/>
+                        <circle cx="520" cy="60" r="2" fill="#3B82F6" opacity="0.15"/>
+                        <circle cx="450" cy="280" r="2" fill="#3B82F6" opacity="0.18"/>
+                        <circle cx="300" cy="130" r="2" fill="#3B82F6" opacity="0.18"/>
+                        <circle cx="500" cy="120" r="2" fill="#3B82F6" opacity="0.2"/>
+                        <circle cx="130" cy="280" r="2" fill="#3B82F6" opacity="0.15"/>
                     </svg>
                     <div class="wf-graph-infocard">
                         <div class="wf-graph-infocard-name">online-payments</div>
                         <div class="wf-graph-infocard-type">feature</div>
+                        <div class="wf-graph-infocard-edges">
+                            contains: <span>12</span> &middot; co-occurs: <span>4</span> &middot; cross-page: <span>2</span>
+                        </div>
                     </div>
                 </div>
             </div>
