@@ -861,7 +861,7 @@ section.alt {
 
 .wf-heatmap-grid {
     display: grid;
-    grid-template-columns: 60px repeat(7, 1fr);
+    grid-template-columns: 60px repeat(7, 28px);
     gap: 3px;
 }
 
@@ -884,7 +884,8 @@ section.alt {
 
 .wf-hm-cell {
     aspect-ratio: 1;
-    min-height: 20px;
+    width: 28px;
+    height: 28px;
 }
 
 .wf-hm-cell.h-high { background: var(--accent); opacity: 0.9; }
