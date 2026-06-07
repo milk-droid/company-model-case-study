@@ -603,6 +603,276 @@ section.alt {
     .ascii-art { font-size: 0.65rem; }
 }
 
+/* Explorer View Wireframe */
+.wf-explorer {
+    background: #0c0c0c;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0;
+    margin: 32px 0;
+    overflow: hidden;
+}
+
+.wf-explorer-label {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 16px;
+    border-bottom: 1px solid #222;
+    background: #0e0e0e;
+}
+
+.wf-explorer-label::before {
+    content: '$ ';
+    color: var(--accent);
+}
+
+.wf-search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border-bottom: 1px solid #222;
+    background: #0d0d0d;
+}
+
+.wf-search-input {
+    flex: 1;
+    height: 32px;
+    border: 1px dashed #333;
+    background: #111;
+    border-radius: 2px;
+}
+
+.wf-search-dropdown {
+    width: 80px;
+    height: 32px;
+    border: 1px solid #222;
+    background: #111;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.wf-explorer-body {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    min-height: 320px;
+}
+
+.wf-filter-sidebar {
+    border-right: 1px solid #222;
+    padding: 14px;
+    background: #0c0c0c;
+}
+
+.wf-filter-group-title {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #222;
+}
+
+.wf-filter-btn {
+    display: block;
+    width: 100%;
+    padding: 6px 10px;
+    margin-bottom: 4px;
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 2px;
+    text-align: left;
+    cursor: default;
+}
+
+.wf-filter-btn.active {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(59, 130, 246, 0.06);
+}
+
+.wf-filter-dropdown {
+    width: 100%;
+    height: 28px;
+    border: 1px solid #222;
+    background: #111;
+    border-radius: 2px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    font-size: 0.55rem;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.wf-filter-clear {
+    font-size: 0.55rem;
+    color: var(--accent);
+    margin-top: 10px;
+    cursor: default;
+    text-decoration: underline;
+}
+
+.wf-entity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 14px;
+}
+
+.wf-entity-card {
+    border: 1px solid #222;
+    background: #0e0e0e;
+    padding: 12px;
+    border-radius: 2px;
+}
+
+.wf-entity-name {
+    font-size: 0.7rem;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+
+.wf-entity-badge {
+    display: inline-block;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-bottom: 6px;
+    opacity: 0.7;
+}
+
+.wf-entity-count {
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+}
+
+.wf-locale-dots {
+    display: flex;
+    gap: 4px;
+}
+
+.wf-locale-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.wf-locale-dot.filled { background: var(--accent); opacity: 0.7; }
+.wf-locale-dot.empty { border: 1px dashed #444; background: none; }
+
+/* Knowledge Graph Wireframe */
+.wf-graph {
+    background: #0c0c0c;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0;
+    margin: 32px 0;
+    overflow: hidden;
+}
+
+.wf-graph-label {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 16px;
+    border-bottom: 1px solid #222;
+    background: #0e0e0e;
+}
+
+.wf-graph-label::before {
+    content: '$ ';
+    color: var(--accent);
+}
+
+.wf-graph-pills {
+    display: flex;
+    gap: 6px;
+    padding: 10px 16px;
+    border-bottom: 1px solid #222;
+    background: #0d0d0d;
+}
+
+.wf-graph-pill {
+    font-size: 0.55rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    border: 1px solid #333;
+    padding: 3px 10px;
+    border-radius: 2px;
+    cursor: default;
+}
+
+.wf-graph-pill.active {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(59, 130, 246, 0.06);
+}
+
+.wf-graph-canvas {
+    position: relative;
+    height: 340px;
+    background: #080808;
+    overflow: hidden;
+}
+
+.wf-graph-infocard {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background: #111;
+    border: 1px solid #333;
+    padding: 8px 12px;
+    border-radius: 2px;
+    z-index: 2;
+}
+
+.wf-graph-infocard-name {
+    font-size: 0.65rem;
+    color: var(--text);
+}
+
+.wf-graph-infocard-type {
+    font-size: 0.5rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+@media (max-width: 768px) {
+    .wf-explorer-body {
+        grid-template-columns: 1fr;
+    }
+    .wf-filter-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #222;
+    }
+    .wf-entity-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* Wireframe Dashboard */
 .wireframe {
     background: #0c0c0c;
@@ -1578,6 +1848,119 @@ section.alt {
                             <div class="wf-heatmap-row-label">segment-d</div>
                             <div class="wf-hm-cell h-low"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-none"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-none"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wireframe: Explorer View -->
+            <div class="wf-explorer fade-in">
+                <div class="wf-explorer-label">Explorer View</div>
+                <div class="wf-search-bar">
+                    <div class="wf-search-input"></div>
+                    <div class="wf-search-dropdown">Sort</div>
+                    <div class="wf-search-dropdown">Group</div>
+                </div>
+                <div class="wf-explorer-body">
+                    <div class="wf-filter-sidebar">
+                        <div class="wf-filter-group-title">Funnel Stages</div>
+                        <div class="wf-filter-btn active">Entry</div>
+                        <div class="wf-filter-btn">Research</div>
+                        <div class="wf-filter-btn">Closer</div>
+                        <div class="wf-filter-group-title" style="margin-top:16px">Refine</div>
+                        <div class="wf-filter-dropdown">Type...</div>
+                        <div class="wf-filter-dropdown">Locale...</div>
+                        <div class="wf-filter-clear">Clear filters</div>
+                    </div>
+                    <div class="wf-entity-grid">
+                        <div class="wf-entity-card">
+                            <div class="wf-entity-name">online-payments</div>
+                            <div class="wf-entity-badge">feature</div>
+                            <div class="wf-entity-count">42 instances</div>
+                            <div class="wf-locale-dots">
+                                <div class="wf-locale-dot filled"></div>
+                                <div class="wf-locale-dot filled"></div>
+                                <div class="wf-locale-dot filled"></div>
+                                <div class="wf-locale-dot empty"></div>
+                            </div>
+                        </div>
+                        <div class="wf-entity-card">
+                            <div class="wf-entity-name">get-started-free</div>
+                            <div class="wf-entity-badge">cta</div>
+                            <div class="wf-entity-count">89 instances</div>
+                            <div class="wf-locale-dots">
+                                <div class="wf-locale-dot filled"></div>
+                                <div class="wf-locale-dot filled"></div>
+                                <div class="wf-locale-dot empty"></div>
+                                <div class="wf-locale-dot empty"></div>
+                            </div>
+                        </div>
+                        <div class="wf-entity-card">
+                            <div class="wf-entity-name">no-monthly-fees</div>
+                            <div class="wf-entity-badge">benefit</div>
+                            <div class="wf-entity-count">31 instances</div>
+                            <div class="wf-locale-dots">
+                                <div class="wf-locale-dot filled"></div>
+                                <div class="wf-locale-dot filled"></div>
+                                <div class="wf-locale-dot filled"></div>
+                                <div class="wf-locale-dot filled"></div>
+                            </div>
+                        </div>
+                        <div class="wf-entity-card">
+                            <div class="wf-entity-name">free-plus-tiers</div>
+                            <div class="wf-entity-badge">pricing</div>
+                            <div class="wf-entity-count">18 instances</div>
+                            <div class="wf-locale-dots">
+                                <div class="wf-locale-dot filled"></div>
+                                <div class="wf-locale-dot empty"></div>
+                                <div class="wf-locale-dot empty"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wireframe: Knowledge Graph View -->
+            <div class="wf-graph fade-in">
+                <div class="wf-graph-label">Knowledge Graph View</div>
+                <div class="wf-graph-pills">
+                    <span class="wf-graph-pill active">feat</span>
+                    <span class="wf-graph-pill">prod</span>
+                    <span class="wf-graph-pill">ben</span>
+                    <span class="wf-graph-pill">cta</span>
+                    <span class="wf-graph-pill">price</span>
+                </div>
+                <div class="wf-graph-canvas">
+                    <svg width="100%" height="100%" viewBox="0 0 800 340" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+                        <!-- Connection lines -->
+                        <line x1="400" y1="160" x2="250" y2="80" stroke="#333" stroke-width="1"/>
+                        <line x1="400" y1="160" x2="550" y2="90" stroke="#333" stroke-width="1"/>
+                        <line x1="400" y1="160" x2="300" y2="260" stroke="#333" stroke-width="1"/>
+                        <line x1="400" y1="160" x2="520" y2="240" stroke="#333" stroke-width="1"/>
+                        <line x1="250" y1="80" x2="150" y2="130" stroke="#222" stroke-width="1"/>
+                        <line x1="250" y1="80" x2="180" y2="40" stroke="#222" stroke-width="1"/>
+                        <line x1="550" y1="90" x2="650" y2="60" stroke="#222" stroke-width="1"/>
+                        <line x1="550" y1="90" x2="680" y2="150" stroke="#222" stroke-width="1"/>
+                        <line x1="300" y1="260" x2="180" y2="280" stroke="#222" stroke-width="1"/>
+                        <line x1="520" y1="240" x2="620" y2="280" stroke="#222" stroke-width="1"/>
+                        <line x1="300" y1="260" x2="520" y2="240" stroke="#1a1a1a" stroke-width="1"/>
+                        <line x1="150" y1="130" x2="180" y2="280" stroke="#1a1a1a" stroke-width="1"/>
+                        <!-- Nodes: varying sizes for visual hierarchy -->
+                        <circle cx="400" cy="160" r="28" fill="#111" stroke="var(--accent)" stroke-width="2" opacity="0.9"/>
+                        <circle cx="250" cy="80" r="20" fill="#111" stroke="var(--accent)" stroke-width="1.5" opacity="0.7"/>
+                        <circle cx="550" cy="90" r="22" fill="#111" stroke="var(--accent)" stroke-width="1.5" opacity="0.7"/>
+                        <circle cx="300" cy="260" r="18" fill="#111" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+                        <circle cx="520" cy="240" r="16" fill="#111" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+                        <circle cx="150" cy="130" r="12" fill="#111" stroke="#444" stroke-width="1" opacity="0.5"/>
+                        <circle cx="180" cy="40" r="10" fill="#111" stroke="#444" stroke-width="1" opacity="0.4"/>
+                        <circle cx="650" cy="60" r="14" fill="#111" stroke="#444" stroke-width="1" opacity="0.5"/>
+                        <circle cx="680" cy="150" r="11" fill="#111" stroke="#444" stroke-width="1" opacity="0.4"/>
+                        <circle cx="180" cy="280" r="13" fill="#111" stroke="#444" stroke-width="1" opacity="0.5"/>
+                        <circle cx="620" cy="280" r="10" fill="#111" stroke="#444" stroke-width="1" opacity="0.4"/>
+                        <circle cx="100" cy="210" r="9" fill="#111" stroke="#333" stroke-width="1" opacity="0.3"/>
+                    </svg>
+                    <div class="wf-graph-infocard">
+                        <div class="wf-graph-infocard-name">online-payments</div>
+                        <div class="wf-graph-infocard-type">feature</div>
                     </div>
                 </div>
             </div>
