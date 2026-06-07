@@ -1683,32 +1683,24 @@ section.alt {
                 <div class="process-item fade-in">
                     <div class="process-marker">1</div>
                     <div class="process-content">
-                        <div class="process-title">Explore the data before designing</div>
-                        <p>Before sketching any UI, I used Claude to write SQL queries against the extracted data. I wanted to see actual distributions and patterns. Several early design ideas turned out to be wrong and got cut here, before any design time was spent.</p>
+                        <div class="process-title">Query the data before designing anything</div>
+                        <p>I sat with Claude and wrote SQL against the extracted entities. I wanted to see what the actual distributions looked like before committing to any visualization. Some ideas I had going in were wrong. Cheaper to find that out with a query than with a prototype.</p>
                     </div>
                 </div>
 
                 <div class="process-item fade-in">
                     <div class="process-marker">2</div>
                     <div class="process-content">
-                        <div class="process-title">Build the pipeline before the UI</div>
-                        <p>I shipped the extraction pipeline as a command-line tool first. No polish, just working data. Once I knew what the data actually looked like, the dashboard design followed naturally.</p>
+                        <div class="process-title">Ship the CLI first, then build the UI</div>
+                        <p>The extraction pipeline started as a command-line tool: paste a URL, get structured entities back as JSON. No interface, just working data. Once I could see the shape of what the extractor produced, the dashboard layout followed from that shape.</p>
                     </div>
                 </div>
 
                 <div class="process-item fade-in">
                     <div class="process-marker">3</div>
                     <div class="process-content">
-                        <div class="process-title">Write the plan, then hand it to AI</div>
-                        <p>Every chunk of work started as a written plan that I pasted into a Claude session. Each plan included: current context, what needs to change, and what success looks like.</p>
-                    </div>
-                </div>
-
-                <div class="process-item fade-in">
-                    <div class="process-marker">4</div>
-                    <div class="process-content">
-                        <div class="process-title">Respect the constraints</div>
-                        <p>The team asked me to keep the knowledge graph visualization as-is. That constraint helped focus the work on the areas that actually needed new design.</p>
+                        <div class="process-title">Write a plan before every Claude session</div>
+                        <p>Each chunk of work started as a written plan I pasted into Claude: here's what exists now, here's what needs to change, here's what done looks like. The plans got shorter over time as the codebase became more self-explanatory, but writing the context first never stopped being useful.</p>
                     </div>
                 </div>
             </div>
