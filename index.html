@@ -608,8 +608,9 @@ section.alt {
     background: #0c0c0c;
     border: 1px solid var(--border);
     border-radius: 3px;
-    padding: 30px;
+    padding: 0;
     margin: 32px 0;
+    overflow: hidden;
 }
 
 .wireframe-title {
@@ -617,7 +618,7 @@ section.alt {
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 0;
     font-weight: 500;
 }
 
@@ -626,158 +627,282 @@ section.alt {
     color: var(--accent);
 }
 
-.wireframe-layout {
-    display: grid;
-    grid-template-columns: 160px 1fr;
-    gap: 16px;
-    min-height: 400px;
+/* Top nav bar */
+.wf-topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    border-bottom: 1px solid #222;
+    background: #0e0e0e;
 }
 
-.wireframe-sidebar {
-    border: 1px dashed #333;
-    border-radius: 3px;
-    padding: 16px;
+.wf-topnav-left {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.wf-topnav-brand {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.wf-topnav-tabs {
+    display: flex;
     gap: 2px;
 }
 
-.wireframe-sidebar-label {
+.wf-topnav-tab {
     font-size: 0.65rem;
     color: var(--text-dim);
+    padding: 5px 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #222;
-}
-
-.wireframe-nav-item {
-    font-size: 0.75rem;
-    color: var(--text-dim);
-    padding: 8px 10px;
-    border-radius: 2px;
-    transition: all 0.2s ease;
     cursor: default;
 }
 
-.wireframe-nav-item::before {
-    content: '> ';
-    color: #333;
-}
-
-.wireframe-nav-item.active {
-    background: rgba(59, 130, 246, 0.1);
+.wf-topnav-tab.active {
     color: var(--accent);
-    border-left: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
 }
 
-.wireframe-nav-item.active::before {
+.wf-topnav-right {
+    display: flex;
+    gap: 12px;
+}
+
+.wf-toggle {
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    padding: 3px 8px;
+    border: 1px solid #333;
+    border-radius: 2px;
+    cursor: default;
+}
+
+.wf-toggle.on {
     color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(59, 130, 246, 0.08);
 }
 
-.wireframe-main {
+/* Dashboard body */
+.wf-body {
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
-.wireframe-panel {
+/* Stats row */
+.wf-stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.wf-stat-card {
     border: 1px dashed #333;
-    border-radius: 3px;
-    padding: 16px;
+    padding: 14px;
+    text-align: center;
 }
 
-.wireframe-panel-label {
-    font-size: 0.65rem;
+.wf-stat-number {
+    font-size: 1.3rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.wf-stat-label {
+    font-size: 0.6rem;
     color: var(--text-dim);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 12px;
+    margin-top: 4px;
 }
 
-/* Heatmap grid */
-.wireframe-heatmap {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 4px;
+/* Content building blocks - pill row */
+.wf-pills-section {
+    border: 1px dashed #333;
+    padding: 12px 14px;
 }
 
-.heatmap-cell {
-    aspect-ratio: 1;
-    border-radius: 2px;
-    min-height: 28px;
+.wf-pills-title {
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
 }
 
-.heatmap-cell.filled-high {
-    background: var(--accent);
-    opacity: 0.9;
-}
-
-.heatmap-cell.filled-med {
-    background: var(--accent);
-    opacity: 0.5;
-}
-
-.heatmap-cell.filled-low {
-    background: var(--accent);
-    opacity: 0.25;
-}
-
-.heatmap-cell.empty {
-    border: 1px dashed #444;
-    background: transparent;
-}
-
-/* Bar chart */
-.wireframe-bars {
+.wf-pills-row {
     display: flex;
-    align-items: flex-end;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.wf-pill {
+    font-size: 0.6rem;
+    padding: 3px 10px;
+    border: 1px solid #333;
+    color: var(--text-dim);
+}
+
+.wf-pill .wf-pill-count {
+    color: var(--accent);
+    margin-left: 4px;
+    font-weight: 600;
+}
+
+/* Product DNA - horizontal stacked bars */
+.wf-product-dna {
+    border: 1px dashed #333;
+    padding: 12px 14px;
+}
+
+.wf-product-dna-title {
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.wf-dna-row {
+    display: flex;
+    align-items: center;
     gap: 8px;
-    height: 100px;
-    padding-top: 10px;
+    margin-bottom: 6px;
 }
 
-.wireframe-bar {
+.wf-dna-label {
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    width: 70px;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.wf-dna-bar-track {
     flex: 1;
-    background: var(--accent);
-    border-radius: 2px 2px 0 0;
-    min-width: 20px;
-    position: relative;
+    height: 14px;
+    background: #1a1a1a;
+    display: flex;
+    overflow: hidden;
 }
 
-.wireframe-bar-label {
-    position: absolute;
-    bottom: -18px;
-    left: 50%;
-    transform: translateX(-50%);
+.wf-dna-seg {
+    height: 100%;
+}
+
+/* 3-column metrics row */
+.wf-metrics-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.wf-metric-panel {
+    border: 1px dashed #333;
+    padding: 12px;
+}
+
+.wf-metric-panel-title {
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+/* Horizontal bars inside panels */
+.wf-hbar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.wf-hbar-label {
     font-size: 0.55rem;
     color: var(--text-dim);
-    white-space: nowrap;
+    width: 55px;
+    text-align: right;
+    flex-shrink: 0;
 }
 
+.wf-hbar-track {
+    flex: 1;
+    height: 10px;
+    background: #1a1a1a;
+}
+
+.wf-hbar-fill {
+    height: 100%;
+    background: var(--accent);
+}
+
+/* Audience DNA heatmap */
+.wf-heatmap-section {
+    border: 1px dashed #333;
+    padding: 12px 14px;
+}
+
+.wf-heatmap-title {
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.wf-heatmap-grid {
+    display: grid;
+    grid-template-columns: 60px repeat(7, 1fr);
+    gap: 3px;
+}
+
+.wf-heatmap-row-label {
+    font-size: 0.55rem;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 6px;
+}
+
+.wf-heatmap-col-label {
+    font-size: 0.5rem;
+    color: var(--text-dim);
+    text-align: center;
+    padding-bottom: 4px;
+    text-transform: uppercase;
+}
+
+.wf-hm-cell {
+    aspect-ratio: 1;
+    min-height: 20px;
+}
+
+.wf-hm-cell.h-high { background: var(--accent); opacity: 0.9; }
+.wf-hm-cell.h-med { background: var(--accent); opacity: 0.5; }
+.wf-hm-cell.h-low { background: var(--accent); opacity: 0.2; }
+.wf-hm-cell.h-none { border: 1px dashed #333; background: transparent; }
+
 @media (max-width: 768px) {
-    .wireframe-layout {
-        grid-template-columns: 1fr;
-    }
-    .wireframe-sidebar {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 6px;
-    }
-    .wireframe-nav-item {
-        font-size: 0.65rem;
-        padding: 6px 8px;
-    }
-    .wireframe-heatmap {
-        grid-template-columns: repeat(6, 1fr);
-    }
+    .wf-topnav { flex-direction: column; gap: 8px; align-items: flex-start; }
+    .wf-stats-row { grid-template-columns: 1fr; }
+    .wf-metrics-row { grid-template-columns: 1fr; }
+    .wf-heatmap-grid { grid-template-columns: 50px repeat(5, 1fr); }
+    .wf-topnav-right { display: none; }
 }
 
 @media (max-width: 480px) {
-    .wireframe-heatmap {
-        grid-template-columns: repeat(4, 1fr);
-    }
+    .wf-pills-row { gap: 4px; }
+    .wf-heatmap-grid { grid-template-columns: 40px repeat(4, 1fr); }
 }
 
 /* Process Timeline */
@@ -1155,11 +1280,11 @@ section.alt {
             <div class="project-meta">
                 <div class="meta-item">
                     <span class="meta-label">Role</span>
-                    <span class="meta-value">Design + Build (Solo)</span>
+                    <span class="meta-value">Design + Build</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-label">Year</span>
-                    <span class="meta-value">2025-26</span>
+                    <span class="meta-value">2026</span>
                 </div>
             </div>
             <div class="skill-tags">
@@ -1215,36 +1340,32 @@ section.alt {
 
             <!-- Extraction Pipeline ASCII Diagram -->
             <div class="ascii-container fade-in">
-                <div class="ascii-title">Extraction Pipeline</div>
-                <div class="ascii-art"><span class="section-label">  LAYER 1: EXTRACTION</span>
+                <div class="ascii-title">System Pipeline</div>
+                <div class="ascii-art"><span class="section-label">  COMPOSITOR (Layer 1)</span>
 <span class="dim">  ========================</span>
 
-       <span class="highlight">URL</span>
-        <span class="dim">|</span>
-        <span class="dim">v</span>
-  <span class="dim">+-----------+     +-----------+     +-------------+</span>
-  <span class="dim">|</span> <span class="node">Crawler</span>   <span class="dim">|----&gt;|</span> <span class="node">Scraper</span>   <span class="dim">|----&gt;|</span> <span class="node">LLM Extract</span> <span class="dim">|</span>
-  <span class="dim">+-----------+     +-----------+     +-------------+</span>
-                                            <span class="dim">|</span>
-                                            <span class="dim">v</span>
-<span class="section-label">  LAYER 2: CANONICAL MODEL</span>            <span class="dim">+-------------+</span>
-<span class="dim">  ========================</span>            <span class="dim">|</span> <span class="node">Postgres</span>    <span class="dim">|</span>
-                                      <span class="dim">+-------------+</span>
+  <span class="highlight">URLs</span> <span class="dim">----&gt;</span> <span class="dim">[</span> <span class="node">Crawler</span> <span class="dim">+</span> <span class="node">LLM Extractor</span> <span class="dim">]</span>
+                      <span class="dim">|</span>
+                      <span class="dim">v</span>
+             <span class="label">structured entities</span>
+                      <span class="dim">|</span>
+                      <span class="dim">v</span>
+              <span class="dim">+-------------+</span>
+              <span class="dim">|</span> <span class="node">Postgres</span>    <span class="dim">|</span>
+              <span class="dim">+------+------+</span>
+                     <span class="dim">|</span>
+        <span class="dim">+------------+------------+</span>
+        <span class="dim">|</span>                         <span class="dim">|</span>
+        <span class="dim">v</span>                         <span class="dim">v</span>
+<span class="section-label">  DASHBOARD (Layer 2)</span>       <span class="section-label">GENERATION (Layer 3)</span>
+<span class="dim">  ====================</span>      <span class="dim">====================</span>
 
-  <span class="label">product</span> <span class="dim">----&gt;</span> <span class="label">feature</span> <span class="dim">----&gt;</span> <span class="label">benefit</span>
-     <span class="dim">|</span>              <span class="dim">|</span>
-     <span class="dim">v</span>              <span class="dim">v</span>
-  <span class="label">pricing</span>        <span class="label">cta</span> <span class="dim">----&gt;</span> <span class="label">testimonial</span>
-
-<span class="section-label">  LAYER 3: GENERATION</span>
-<span class="dim">  ========================</span>
-
-  <span class="highlight">scaffold</span>(<span class="label">product</span>=X, <span class="label">audience</span>=Y, <span class="label">locale</span>=Z)
-        <span class="dim">|</span>
-        <span class="dim">v</span>
-  <span class="dim">+------------------------------------------+</span>
-  <span class="dim">|</span> <span class="node">hero</span> <span class="dim">|</span> <span class="node">features</span> <span class="dim">|</span> <span class="node">pricing</span> <span class="dim">|</span> <span class="node">testimonials</span> <span class="dim">|</span>
-  <span class="dim">+------------------------------------------+</span></div>
+  <span class="label">Entity Browser</span>            <span class="highlight">scaffold</span>(<span class="label">product</span>, <span class="label">audience</span>, <span class="label">locale</span>)
+  <span class="label">Heatmaps</span>                          <span class="dim">|</span>
+  <span class="label">Product DNA</span>                       <span class="dim">v</span>
+  <span class="label">Knowledge Graph</span>          <span class="dim">+-----------------------------------+</span>
+                           <span class="dim">|</span> <span class="node">hero</span> <span class="dim">|</span> <span class="node">features</span> <span class="dim">|</span> <span class="node">pricing</span> <span class="dim">|</span> <span class="node">cta</span> <span class="dim">|</span>
+                           <span class="dim">+-----------------------------------+</span></div>
             </div>
 
             <div class="text-content" style="margin-top: 30px;">
@@ -1316,77 +1437,145 @@ section.alt {
 
             <!-- Wireframe Dashboard -->
             <div class="wireframe fade-in">
-                <div class="wireframe-title">Dashboard Wireframe</div>
-                <div class="wireframe-layout">
-                    <div class="wireframe-sidebar">
-                        <div class="wireframe-sidebar-label">Navigation</div>
-                        <div class="wireframe-nav-item active">overview</div>
-                        <div class="wireframe-nav-item">heatmap</div>
-                        <div class="wireframe-nav-item">funnel</div>
-                        <div class="wireframe-nav-item">locale</div>
-                        <div class="wireframe-nav-item">graph</div>
+                <!-- Top Nav Bar -->
+                <div class="wf-topnav">
+                    <div class="wf-topnav-left">
+                        <span class="wf-topnav-brand">Company Model</span>
+                        <div class="wf-topnav-tabs">
+                            <span class="wf-topnav-tab active">Dashboard</span>
+                            <span class="wf-topnav-tab">Explorer</span>
+                            <span class="wf-topnav-tab">Graph</span>
+                        </div>
                     </div>
-                    <div class="wireframe-main">
-                        <div class="wireframe-panel">
-                            <div class="wireframe-panel-label">Entity Coverage Heatmap - Products vs. Entity Types</div>
-                            <div class="wireframe-heatmap">
-                                <div class="heatmap-cell filled-high"></div>
-                                <div class="heatmap-cell filled-med"></div>
-                                <div class="heatmap-cell filled-high"></div>
-                                <div class="heatmap-cell empty"></div>
-                                <div class="heatmap-cell filled-low"></div>
-                                <div class="heatmap-cell empty"></div>
-                                <div class="heatmap-cell filled-med"></div>
-                                <div class="heatmap-cell filled-high"></div>
-
-                                <div class="heatmap-cell filled-med"></div>
-                                <div class="heatmap-cell filled-high"></div>
-                                <div class="heatmap-cell empty"></div>
-                                <div class="heatmap-cell filled-high"></div>
-                                <div class="heatmap-cell filled-med"></div>
-                                <div class="heatmap-cell filled-high"></div>
-                                <div class="heatmap-cell empty"></div>
-                                <div class="heatmap-cell filled-low"></div>
-
-                                <div class="heatmap-cell empty"></div>
-                                <div class="heatmap-cell filled-low"></div>
-                                <div class="heatmap-cell filled-med"></div>
-                                <div class="heatmap-cell empty"></div>
-                                <div class="heatmap-cell filled-high"></div>
-                                <div class="heatmap-cell filled-med"></div>
-                                <div class="heatmap-cell filled-high"></div>
-                                <div class="heatmap-cell empty"></div>
-
-                                <div class="heatmap-cell filled-high"></div>
-                                <div class="heatmap-cell empty"></div>
-                                <div class="heatmap-cell filled-high"></div>
-                                <div class="heatmap-cell filled-med"></div>
-                                <div class="heatmap-cell empty"></div>
-                                <div class="heatmap-cell filled-low"></div>
-                                <div class="heatmap-cell empty"></div>
-                                <div class="heatmap-cell filled-high"></div>
-
-                                <div class="heatmap-cell filled-low"></div>
-                                <div class="heatmap-cell filled-med"></div>
-                                <div class="heatmap-cell empty"></div>
-                                <div class="heatmap-cell filled-high"></div>
-                                <div class="heatmap-cell filled-high"></div>
-                                <div class="heatmap-cell empty"></div>
-                                <div class="heatmap-cell filled-med"></div>
-                                <div class="heatmap-cell filled-low"></div>
+                    <div class="wf-topnav-right">
+                        <span class="wf-toggle on">All</span>
+                        <span class="wf-toggle">Golden</span>
+                        <span class="wf-toggle">Notes</span>
+                    </div>
+                </div>
+                <div class="wf-body">
+                    <!-- Stats Row -->
+                    <div class="wf-stats-row">
+                        <div class="wf-stat-card">
+                            <div class="wf-stat-number">3,060</div>
+                            <div class="wf-stat-label">Pages Crawled</div>
+                        </div>
+                        <div class="wf-stat-card">
+                            <div class="wf-stat-number">8,412</div>
+                            <div class="wf-stat-label">Entities</div>
+                        </div>
+                        <div class="wf-stat-card">
+                            <div class="wf-stat-number">18</div>
+                            <div class="wf-stat-label">Products</div>
+                        </div>
+                    </div>
+                    <!-- Content Building Blocks -->
+                    <div class="wf-pills-section">
+                        <div class="wf-pills-title">Content Building Blocks</div>
+                        <div class="wf-pills-row">
+                            <span class="wf-pill">feature<span class="wf-pill-count">2,841</span></span>
+                            <span class="wf-pill">product<span class="wf-pill-count">412</span></span>
+                            <span class="wf-pill">benefit<span class="wf-pill-count">1,209</span></span>
+                            <span class="wf-pill">cta<span class="wf-pill-count">890</span></span>
+                            <span class="wf-pill">pricing<span class="wf-pill-count">318</span></span>
+                            <span class="wf-pill">testimonial<span class="wf-pill-count">167</span></span>
+                            <span class="wf-pill">statistic<span class="wf-pill-count">94</span></span>
+                        </div>
+                    </div>
+                    <!-- Product DNA -->
+                    <div class="wf-product-dna">
+                        <div class="wf-product-dna-title">Product DNA</div>
+                        <div class="wf-dna-row">
+                            <span class="wf-dna-label">payments</span>
+                            <div class="wf-dna-bar-track">
+                                <div class="wf-dna-seg" style="width:40%;background:var(--accent);opacity:0.9"></div>
+                                <div class="wf-dna-seg" style="width:20%;background:var(--accent);opacity:0.6"></div>
+                                <div class="wf-dna-seg" style="width:15%;background:var(--accent);opacity:0.4"></div>
+                                <div class="wf-dna-seg" style="width:10%;background:var(--accent);opacity:0.25"></div>
                             </div>
                         </div>
-                        <div class="wireframe-panel" style="padding-bottom: 30px;">
-                            <div class="wireframe-panel-label">Entity Distribution by Type</div>
-                            <div class="wireframe-bars">
-                                <div class="wireframe-bar" style="height: 90%; opacity: 0.9;"><span class="wireframe-bar-label">feat</span></div>
-                                <div class="wireframe-bar" style="height: 70%; opacity: 0.7;"><span class="wireframe-bar-label">prod</span></div>
-                                <div class="wireframe-bar" style="height: 55%; opacity: 0.6;"><span class="wireframe-bar-label">ben</span></div>
-                                <div class="wireframe-bar" style="height: 45%; opacity: 0.5;"><span class="wireframe-bar-label">cta</span></div>
-                                <div class="wireframe-bar" style="height: 35%; opacity: 0.45;"><span class="wireframe-bar-label">price</span></div>
-                                <div class="wireframe-bar" style="height: 20%; opacity: 0.35;"><span class="wireframe-bar-label">test</span></div>
-                                <div class="wireframe-bar" style="height: 15%; opacity: 0.3;"><span class="wireframe-bar-label">stat</span></div>
+                        <div class="wf-dna-row">
+                            <span class="wf-dna-label">terminal</span>
+                            <div class="wf-dna-bar-track">
+                                <div class="wf-dna-seg" style="width:35%;background:var(--accent);opacity:0.9"></div>
+                                <div class="wf-dna-seg" style="width:25%;background:var(--accent);opacity:0.6"></div>
+                                <div class="wf-dna-seg" style="width:10%;background:var(--accent);opacity:0.4"></div>
                             </div>
+                        </div>
+                        <div class="wf-dna-row">
+                            <span class="wf-dna-label">restaurants</span>
+                            <div class="wf-dna-bar-track">
+                                <div class="wf-dna-seg" style="width:30%;background:var(--accent);opacity:0.9"></div>
+                                <div class="wf-dna-seg" style="width:18%;background:var(--accent);opacity:0.6"></div>
+                                <div class="wf-dna-seg" style="width:12%;background:var(--accent);opacity:0.4"></div>
+                                <div class="wf-dna-seg" style="width:8%;background:var(--accent);opacity:0.25"></div>
+                            </div>
+                        </div>
+                        <div class="wf-dna-row">
+                            <span class="wf-dna-label">retail</span>
+                            <div class="wf-dna-bar-track">
+                                <div class="wf-dna-seg" style="width:28%;background:var(--accent);opacity:0.9"></div>
+                                <div class="wf-dna-seg" style="width:15%;background:var(--accent);opacity:0.6"></div>
+                                <div class="wf-dna-seg" style="width:10%;background:var(--accent);opacity:0.4"></div>
+                            </div>
+                        </div>
+                        <div class="wf-dna-row">
+                            <span class="wf-dna-label">invoices</span>
+                            <div class="wf-dna-bar-track">
+                                <div class="wf-dna-seg" style="width:22%;background:var(--accent);opacity:0.9"></div>
+                                <div class="wf-dna-seg" style="width:12%;background:var(--accent);opacity:0.6"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 3-Column Row -->
+                    <div class="wf-metrics-row">
+                        <div class="wf-metric-panel">
+                            <div class="wf-metric-panel-title">Top CTAs</div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">Get started</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:85%"></div></div></div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">Contact</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:60%"></div></div></div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">Learn more</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:45%"></div></div></div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">Try free</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:30%"></div></div></div>
+                        </div>
+                        <div class="wf-metric-panel">
+                            <div class="wf-metric-panel-title">Locale Coverage</div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">en-US</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:95%"></div></div></div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">en-GB</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:72%"></div></div></div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">fr-FR</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:55%"></div></div></div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">ja-JP</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:38%"></div></div></div>
+                        </div>
+                        <div class="wf-metric-panel">
+                            <div class="wf-metric-panel-title">Translation Gaps</div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">es-ES</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:65%;background:#F59E0B"></div></div></div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">fr-CA</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:50%;background:#F59E0B"></div></div></div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">ja-JP</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:42%;background:#F59E0B"></div></div></div>
+                            <div class="wf-hbar"><span class="wf-hbar-label">en-AU</span><div class="wf-hbar-track"><div class="wf-hbar-fill" style="width:20%;background:#F59E0B"></div></div></div>
+                        </div>
+                    </div>
+                    <!-- Audience DNA Heatmap -->
+                    <div class="wf-heatmap-section">
+                        <div class="wf-heatmap-title">Audience DNA</div>
+                        <div class="wf-heatmap-grid">
+                            <!-- Column headers -->
+                            <div></div>
+                            <div class="wf-heatmap-col-label">feat</div>
+                            <div class="wf-heatmap-col-label">prod</div>
+                            <div class="wf-heatmap-col-label">ben</div>
+                            <div class="wf-heatmap-col-label">cta</div>
+                            <div class="wf-heatmap-col-label">price</div>
+                            <div class="wf-heatmap-col-label">test</div>
+                            <div class="wf-heatmap-col-label">stat</div>
+                            <!-- Row: Retail -->
+                            <div class="wf-heatmap-row-label">retail</div>
+                            <div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-low"></div><div class="wf-hm-cell h-none"></div><div class="wf-hm-cell h-low"></div>
+                            <!-- Row: Restaurant -->
+                            <div class="wf-heatmap-row-label">restaurant</div>
+                            <div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-low"></div><div class="wf-hm-cell h-none"></div>
+                            <!-- Row: Services -->
+                            <div class="wf-heatmap-row-label">services</div>
+                            <div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-low"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-none"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-low"></div>
+                            <!-- Row: Enterprise -->
+                            <div class="wf-heatmap-row-label">enterprise</div>
+                            <div class="wf-hm-cell h-low"></div><div class="wf-hm-cell h-med"></div><div class="wf-hm-cell h-none"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-none"></div><div class="wf-hm-cell h-high"></div><div class="wf-hm-cell h-med"></div>
                         </div>
                     </div>
                 </div>
@@ -1430,10 +1619,6 @@ section.alt {
                 <p>I built a similar content entity extraction and knowledge graph system as a personal project: <a href="https://github.com/naeema-scopes/sitemapper" target="_blank" rel="noopener noreferrer">SiteMapper</a> - open source, with full code.</p>
             </div>
 
-            <!-- NDA Notice -->
-            <div class="nda-notice">
-                <p>This case study describes process and design thinking only. Specific metrics, screenshots, and proprietary details are omitted per NDA. More information available upon request.</p>
-            </div>
         </div>
     </section>
 
