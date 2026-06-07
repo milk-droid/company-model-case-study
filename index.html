@@ -13,11 +13,11 @@
     --border-hover: #222222;
     --text: #e0e0e0;
     --text-dim: #666666;
-    --accent: #10B981;
-    --accent-light: #34D399;
-    --accent-dark: #059669;
-    --accent-glow: rgba(16, 185, 129, 0.15);
-    --accent-glow-strong: rgba(16, 185, 129, 0.3);
+    --accent: #3B82F6;
+    --accent-light: #60A5FA;
+    --accent-dark: #2563EB;
+    --accent-glow: rgba(59, 130, 246, 0.15);
+    --accent-glow-strong: rgba(59, 130, 246, 0.3);
     --focus-outline: 2px solid var(--accent);
 }
 
@@ -99,7 +99,7 @@ body {
 
 .nav-dot.active {
     background-color: var(--accent);
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
 }
 
 .nav-dot:hover {
@@ -145,7 +145,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: var(--bg);
+    background: #0f172a;
     overflow: hidden;
     padding: 5% 0;
 }
@@ -162,8 +162,8 @@ body {
         0deg,
         transparent,
         transparent 2px,
-        rgba(16, 185, 129, 0.02) 2px,
-        rgba(16, 185, 129, 0.02) 4px
+        rgba(59, 130, 246, 0.02) 2px,
+        rgba(59, 130, 246, 0.02) 4px
     );
     z-index: 1;
     pointer-events: none;
@@ -178,8 +178,8 @@ body {
     width: 100%;
     height: 100%;
     background-image:
-        linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+        linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
     background-size: 40px 40px;
     z-index: 0;
 }
@@ -280,6 +280,34 @@ body {
     .hero h1 span { font-size: clamp(1.6rem, 8vw, 2.6rem); }
 }
 
+/* NDA Top Notice - terminal warning style */
+.nda-top-notice {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid #F59E0B;
+    padding: 24px 30px;
+    margin: 0;
+}
+
+.nda-top-notice .container {
+    max-width: 1100px;
+}
+
+.nda-top-notice p {
+    color: var(--text-dim);
+    font-size: 0.82rem;
+    line-height: 1.7;
+    font-style: normal;
+    margin: 0;
+}
+
+.nda-top-notice p::before {
+    content: '[ NDA ] ';
+    color: #F59E0B;
+    font-weight: 700;
+    font-style: normal;
+}
+
 /* Project Info Bar */
 .project-info-bar {
     display: flex;
@@ -297,7 +325,7 @@ body {
 
 .project-info-bar:hover {
     border-color: var(--accent);
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.08);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.08);
 }
 
 .project-meta {
@@ -471,12 +499,12 @@ section.alt {
 }
 
 .layer-card:nth-child(4) {
-    border-top-color: #6EE7B7;
+    border-top-color: #93C5FD;
 }
 
 .layer-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
 }
 
 .layer-number {
@@ -515,6 +543,241 @@ section.alt {
     .layer-grid { grid-template-columns: 1fr; }
     .layer-card { padding: 22px; }
     .layer-card h3 { font-size: 1rem; }
+}
+
+/* ASCII Art Containers */
+.ascii-container {
+    background: #0c0c0c;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 30px;
+    margin: 40px 0;
+    overflow-x: auto;
+}
+
+.ascii-container .ascii-title {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.ascii-container .ascii-title::before {
+    content: '$ ';
+    color: var(--accent);
+}
+
+.ascii-art {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    white-space: pre;
+    color: var(--text-dim);
+}
+
+.ascii-art .node {
+    color: var(--accent);
+}
+
+.ascii-art .highlight {
+    color: var(--accent-light);
+}
+
+.ascii-art .label {
+    color: #93C5FD;
+}
+
+.ascii-art .dim {
+    color: #444;
+}
+
+.ascii-art .section-label {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+@media (max-width: 576px) {
+    .ascii-container { padding: 18px; }
+    .ascii-art { font-size: 0.65rem; }
+}
+
+/* Wireframe Dashboard */
+.wireframe {
+    background: #0c0c0c;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 30px;
+    margin: 40px 0;
+}
+
+.wireframe-title {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.wireframe-title::before {
+    content: '$ ';
+    color: var(--accent);
+}
+
+.wireframe-layout {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 16px;
+    min-height: 400px;
+}
+
+.wireframe-sidebar {
+    border: 1px dashed #333;
+    border-radius: 3px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.wireframe-sidebar-label {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #222;
+}
+
+.wireframe-nav-item {
+    font-size: 0.75rem;
+    color: var(--text-dim);
+    padding: 8px 10px;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.wireframe-nav-item::before {
+    content: '> ';
+    color: #333;
+}
+
+.wireframe-nav-item.active {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent);
+    border-left: 2px solid var(--accent);
+}
+
+.wireframe-nav-item.active::before {
+    color: var(--accent);
+}
+
+.wireframe-main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.wireframe-panel {
+    border: 1px dashed #333;
+    border-radius: 3px;
+    padding: 16px;
+}
+
+.wireframe-panel-label {
+    font-size: 0.65rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+/* Heatmap grid */
+.wireframe-heatmap {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 4px;
+}
+
+.heatmap-cell {
+    aspect-ratio: 1;
+    border-radius: 2px;
+    min-height: 28px;
+}
+
+.heatmap-cell.filled-high {
+    background: var(--accent);
+    opacity: 0.9;
+}
+
+.heatmap-cell.filled-med {
+    background: var(--accent);
+    opacity: 0.5;
+}
+
+.heatmap-cell.filled-low {
+    background: var(--accent);
+    opacity: 0.25;
+}
+
+.heatmap-cell.empty {
+    border: 1px dashed #444;
+    background: transparent;
+}
+
+/* Bar chart */
+.wireframe-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 100px;
+    padding-top: 10px;
+}
+
+.wireframe-bar {
+    flex: 1;
+    background: var(--accent);
+    border-radius: 2px 2px 0 0;
+    min-width: 20px;
+    position: relative;
+}
+
+.wireframe-bar-label {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.55rem;
+    color: var(--text-dim);
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .wireframe-layout {
+        grid-template-columns: 1fr;
+    }
+    .wireframe-sidebar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .wireframe-nav-item {
+        font-size: 0.65rem;
+        padding: 6px 8px;
+    }
+    .wireframe-heatmap {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .wireframe-heatmap {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 /* Process Timeline */
@@ -571,7 +834,7 @@ section.alt {
 
 .process-content:hover {
     border-color: var(--accent);
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.08);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.08);
 }
 
 .process-title {
@@ -617,12 +880,12 @@ section.alt {
 }
 
 .finding-card:nth-child(3) {
-    border-left-color: #6EE7B7;
+    border-left-color: #93C5FD;
 }
 
 .finding-card:hover {
     border-color: var(--accent);
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.1);
 }
 
 .finding-card h3 {
@@ -694,7 +957,7 @@ section.alt {
 }
 
 .callout-box:hover {
-    box-shadow: 0 0 20px rgba(16, 185, 129, 0.12);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.12);
 }
 
 .callout-box h3 {
@@ -811,7 +1074,7 @@ section.alt {
 
     .bottom-nav-item.active .bottom-nav-icon {
         background: var(--accent);
-        box-shadow: 0 0 6px rgba(16, 185, 129, 0.5);
+        box-shadow: 0 0 6px rgba(59, 130, 246, 0.5);
     }
 
     .bottom-nav-item:hover {
@@ -850,7 +1113,7 @@ section.alt {
 
 /* Selection color */
 ::selection {
-    background: rgba(16, 185, 129, 0.3);
+    background: rgba(59, 130, 246, 0.3);
     color: var(--text);
 }
     </style>
@@ -874,10 +1137,17 @@ section.alt {
             <div class="hero-content">
                 <span class="role-badge">Design + Build (Solo)</span>
                 <h1>COMPANY<span>MODEL<span class="cursor"></span></span></h1>
-                <p>Designing a content intelligence system for a major fintech platform</p>
+                <p>Designing a content intelligence system for Square Web at Block, Inc.</p>
             </div>
         </div>
     </section>
+
+    <!-- NDA Top Notice -->
+    <div class="nda-top-notice">
+        <div class="container">
+            <p>This case study describes work done at Block, Inc. (Square). It covers process and design thinking only. Specific metrics, screenshots, and proprietary details are omitted per NDA. More information available upon request.</p>
+        </div>
+    </div>
 
     <!-- Project Info -->
     <div class="container">
@@ -906,7 +1176,7 @@ section.alt {
         <div class="container">
             <h2 class="section-heading">The Problem</h2>
             <div class="text-content">
-                <p>Pages tell coherent stories. The site doesn't. Hundreds of marketing pages, written by different teams over years, in many locales. The same product gets named two different ways in three different places. There's no machine-readable model of what the company says - so there's no way to author at the system level.</p>
+                <p>Pages tell coherent stories. The site doesn't. Hundreds of marketing pages on Square Web, written by different teams over years, in many locales. The same product gets named two different ways in three different places. There's no machine-readable model of what Block, Inc. (Square) says - so there's no way to author at the system level.</p>
             </div>
         </div>
     </section>
@@ -916,7 +1186,7 @@ section.alt {
         <div class="container">
             <h2 class="section-heading">The Approach</h2>
             <div class="text-content">
-                <p>Stop authoring pages. Author the system that produces them. Extract everything the site already says. Reduce it to canonical entities. Make it queryable. Then let an LLM compose new pages out of those entities.</p>
+                <p>Stop authoring pages. Author the system that produces them. Extract everything the Square Web site already says. Reduce it to canonical entities. Make it queryable. Then let an LLM compose new pages out of those entities.</p>
             </div>
 
             <h3 class="subheading" style="margin-top: 40px;">The 4-Layer Architecture</h3>
@@ -929,7 +1199,7 @@ section.alt {
                 <div class="layer-card fade-in">
                     <span class="layer-number">2</span>
                     <h3>Canonical Model</h3>
-                    <p>A deduplicated entity database that spans pages and locales. One source of truth for what the company says about each product, feature, and benefit.</p>
+                    <p>A deduplicated entity database that spans pages and locales. One source of truth for what Square says about each product, feature, and benefit.</p>
                 </div>
                 <div class="layer-card fade-in">
                     <span class="layer-number">3</span>
@@ -941,6 +1211,40 @@ section.alt {
                     <h3>Adaptive Layer</h3>
                     <p>Runtime personalization based on audience and context. Planned but not yet built - the architecture makes room for it.</p>
                 </div>
+            </div>
+
+            <!-- Extraction Pipeline ASCII Diagram -->
+            <div class="ascii-container fade-in">
+                <div class="ascii-title">Extraction Pipeline</div>
+                <div class="ascii-art"><span class="section-label">  LAYER 1: EXTRACTION</span>
+<span class="dim">  ========================</span>
+
+       <span class="highlight">URL</span>
+        <span class="dim">|</span>
+        <span class="dim">v</span>
+  <span class="dim">+-----------+     +-----------+     +-------------+</span>
+  <span class="dim">|</span> <span class="node">Crawler</span>   <span class="dim">|----&gt;|</span> <span class="node">Scraper</span>   <span class="dim">|----&gt;|</span> <span class="node">LLM Extract</span> <span class="dim">|</span>
+  <span class="dim">+-----------+     +-----------+     +-------------+</span>
+                                            <span class="dim">|</span>
+                                            <span class="dim">v</span>
+<span class="section-label">  LAYER 2: CANONICAL MODEL</span>            <span class="dim">+-------------+</span>
+<span class="dim">  ========================</span>            <span class="dim">|</span> <span class="node">Postgres</span>    <span class="dim">|</span>
+                                      <span class="dim">+-------------+</span>
+
+  <span class="label">product</span> <span class="dim">----&gt;</span> <span class="label">feature</span> <span class="dim">----&gt;</span> <span class="label">benefit</span>
+     <span class="dim">|</span>              <span class="dim">|</span>
+     <span class="dim">v</span>              <span class="dim">v</span>
+  <span class="label">pricing</span>        <span class="label">cta</span> <span class="dim">----&gt;</span> <span class="label">testimonial</span>
+
+<span class="section-label">  LAYER 3: GENERATION</span>
+<span class="dim">  ========================</span>
+
+  <span class="highlight">scaffold</span>(<span class="label">product</span>=X, <span class="label">audience</span>=Y, <span class="label">locale</span>=Z)
+        <span class="dim">|</span>
+        <span class="dim">v</span>
+  <span class="dim">+------------------------------------------+</span>
+  <span class="dim">|</span> <span class="node">hero</span> <span class="dim">|</span> <span class="node">features</span> <span class="dim">|</span> <span class="node">pricing</span> <span class="dim">|</span> <span class="node">testimonials</span> <span class="dim">|</span>
+  <span class="dim">+------------------------------------------+</span></div>
             </div>
 
             <div class="text-content" style="margin-top: 30px;">
@@ -994,6 +1298,89 @@ section.alt {
     <section id="decisions" class="alt">
         <div class="container">
             <h2 class="section-heading">Design Decisions</h2>
+
+            <h3 class="subheading" style="margin-top: 20px;">Layer 2 - The Dashboard</h3>
+            <div class="text-content">
+                <p>The dashboard needed to answer one question fast: where are we missing content? A heatmap of products vs. entity types across locales reveals gaps at a glance. The nav gives access to deeper views - funnel analysis, locale comparison, entity graph - but the heatmap is the front door.</p>
+            </div>
+
+            <!-- Wireframe Dashboard -->
+            <div class="wireframe fade-in">
+                <div class="wireframe-title">Dashboard Wireframe</div>
+                <div class="wireframe-layout">
+                    <div class="wireframe-sidebar">
+                        <div class="wireframe-sidebar-label">Navigation</div>
+                        <div class="wireframe-nav-item active">overview</div>
+                        <div class="wireframe-nav-item">heatmap</div>
+                        <div class="wireframe-nav-item">funnel</div>
+                        <div class="wireframe-nav-item">locale</div>
+                        <div class="wireframe-nav-item">graph</div>
+                    </div>
+                    <div class="wireframe-main">
+                        <div class="wireframe-panel">
+                            <div class="wireframe-panel-label">Entity Coverage Heatmap - Products vs. Entity Types</div>
+                            <div class="wireframe-heatmap">
+                                <div class="heatmap-cell filled-high"></div>
+                                <div class="heatmap-cell filled-med"></div>
+                                <div class="heatmap-cell filled-high"></div>
+                                <div class="heatmap-cell empty"></div>
+                                <div class="heatmap-cell filled-low"></div>
+                                <div class="heatmap-cell empty"></div>
+                                <div class="heatmap-cell filled-med"></div>
+                                <div class="heatmap-cell filled-high"></div>
+
+                                <div class="heatmap-cell filled-med"></div>
+                                <div class="heatmap-cell filled-high"></div>
+                                <div class="heatmap-cell empty"></div>
+                                <div class="heatmap-cell filled-high"></div>
+                                <div class="heatmap-cell filled-med"></div>
+                                <div class="heatmap-cell filled-high"></div>
+                                <div class="heatmap-cell empty"></div>
+                                <div class="heatmap-cell filled-low"></div>
+
+                                <div class="heatmap-cell empty"></div>
+                                <div class="heatmap-cell filled-low"></div>
+                                <div class="heatmap-cell filled-med"></div>
+                                <div class="heatmap-cell empty"></div>
+                                <div class="heatmap-cell filled-high"></div>
+                                <div class="heatmap-cell filled-med"></div>
+                                <div class="heatmap-cell filled-high"></div>
+                                <div class="heatmap-cell empty"></div>
+
+                                <div class="heatmap-cell filled-high"></div>
+                                <div class="heatmap-cell empty"></div>
+                                <div class="heatmap-cell filled-high"></div>
+                                <div class="heatmap-cell filled-med"></div>
+                                <div class="heatmap-cell empty"></div>
+                                <div class="heatmap-cell filled-low"></div>
+                                <div class="heatmap-cell empty"></div>
+                                <div class="heatmap-cell filled-high"></div>
+
+                                <div class="heatmap-cell filled-low"></div>
+                                <div class="heatmap-cell filled-med"></div>
+                                <div class="heatmap-cell empty"></div>
+                                <div class="heatmap-cell filled-high"></div>
+                                <div class="heatmap-cell filled-high"></div>
+                                <div class="heatmap-cell empty"></div>
+                                <div class="heatmap-cell filled-med"></div>
+                                <div class="heatmap-cell filled-low"></div>
+                            </div>
+                        </div>
+                        <div class="wireframe-panel" style="padding-bottom: 30px;">
+                            <div class="wireframe-panel-label">Entity Distribution by Type</div>
+                            <div class="wireframe-bars">
+                                <div class="wireframe-bar" style="height: 90%; opacity: 0.9;"><span class="wireframe-bar-label">feat</span></div>
+                                <div class="wireframe-bar" style="height: 70%; opacity: 0.7;"><span class="wireframe-bar-label">prod</span></div>
+                                <div class="wireframe-bar" style="height: 55%; opacity: 0.6;"><span class="wireframe-bar-label">ben</span></div>
+                                <div class="wireframe-bar" style="height: 45%; opacity: 0.5;"><span class="wireframe-bar-label">cta</span></div>
+                                <div class="wireframe-bar" style="height: 35%; opacity: 0.45;"><span class="wireframe-bar-label">price</span></div>
+                                <div class="wireframe-bar" style="height: 20%; opacity: 0.35;"><span class="wireframe-bar-label">test</span></div>
+                                <div class="wireframe-bar" style="height: 15%; opacity: 0.3;"><span class="wireframe-bar-label">stat</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="findings-grid">
                 <div class="finding-card fade-in">
